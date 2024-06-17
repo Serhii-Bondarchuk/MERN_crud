@@ -21,15 +21,15 @@ const PORT = process.env.PORT || 8000;
 // const MONGO_URL = process.env.MONGO_URL || MONGO_URL_RES
 const MONGO_URL = process.env.MONGO_URL
 
-// mongoose
-//   .connect(MONGO_URL)
-//   .then(() => {
-//     console.log('MongoDB is connected...')
-//     app.listen(PORT, () => {
-//       console.log(`Server is starting on ${PORT}`)
-//     })
-//   })
-//   .catch((err) => console.log(err))
+mongoose
+  .connect(MONGO_URL)
+  .then(() => {
+    console.log('MongoDB is connected...')
+    app.listen(PORT, () => {
+      console.log(`Server is starting on ${PORT}`)
+    })
+  })
+  .catch((err) => console.log(err))
 
 // Have Node serve the files for our built React app
 // app.use(express.static(path.resolve(__dirname, '../client/build')));
