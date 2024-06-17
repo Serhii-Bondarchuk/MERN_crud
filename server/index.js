@@ -45,11 +45,11 @@ mongoose
 
 app.use("/", (req, res) => {
 
-  return res.send(`SERVER is running...1111Ok!!! ${process.env.PORT} - port
+  return res.send(`SERVER is running...22222Ok!!! ${process.env.PORT} - port
     and mongo_url - ${process.env.MONGO_URL}`)
 
 })
 
-app.listen(5000, (req, res) => {
-  console.log('Server is started on Port 5000...')
-})
+// app.listen(5000, (req, res) => {
+//   console.log('Server is started on Port 5000...')
+// })
