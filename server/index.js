@@ -9,9 +9,9 @@ import { fileURLToPath } from 'url';
 
 
 const app = express();
-// app.use(bodyParser.json());
-// app.use(cors())
-// dotenv.config()
+app.use(bodyParser.json());
+app.use(cors())
+dotenv.config()
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -42,7 +42,7 @@ const __dirname = path.dirname(__filename);
 // app.get('/test', (req, res) => res.send('Test Request'))
 
 app.use("/", (req, res) => {
-  res.send('SERVER is running...')
+  res.send('SERVER is running...1111Ok!!!')
 })
 
 app.listen(5000, (req, res) => {
