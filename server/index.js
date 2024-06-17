@@ -17,8 +17,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // const MONGO_URL_RES = "mongodb://localhost:27017/mern-stack"
-// const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000;
 // const MONGO_URL = process.env.MONGO_URL || MONGO_URL_RES
+const MONGO_URL = process.env.MONGO_URL
+
 // mongoose
 //   .connect(MONGO_URL)
 //   .then(() => {
@@ -42,7 +44,10 @@ const __dirname = path.dirname(__filename);
 // app.get('/test', (req, res) => res.send('Test Request'))
 
 app.use("/", (req, res) => {
-  res.send('SERVER is running...1111Ok!!!')
+
+  return res.send(`SERVER is running...1111Ok!!! ${process.env.PORT} - port
+    and mongo_url - ${process.env.MONGO_URL}`)
+
 })
 
 app.listen(5000, (req, res) => {
