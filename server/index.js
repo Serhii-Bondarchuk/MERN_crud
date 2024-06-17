@@ -1,9 +1,9 @@
 import express from 'express';
-// import mongoose from 'mongoose';
-// import bodyParser from 'body-parser';
-// import dotenv from 'dotenv'
-// import userRoute from './routes/userRoute.js';
-// import cors from 'cors'
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import dotenv from 'dotenv'
+import userRoute from './routes/userRoute.js';
+import cors from 'cors'
 import path from 'node:path'
 import { fileURLToPath } from 'url';
 
