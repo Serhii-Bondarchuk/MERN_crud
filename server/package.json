@@ -4,7 +4,6 @@
   "description": "server part",
   "main": "index.js",
   "type": "module",
-  "proxy": "http://localhost:8000",
   "engines": {
     "node": "v20.12.0"
   },
