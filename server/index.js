@@ -20,17 +20,17 @@ const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 8000;
 // const MONGO_URL = process.env.MONGO_URL || MONGO_URL_RES
 const RES = 'mongodb+srv://amax9111:ZDK3mWUmwz8Z4Vpr@my-mongo-users.s5ry9q1.mongodb.net/?retryWrites=true&w=majority&appName=my-mongo-users'
-const MONGODB_URL = process.env.MONGODB_URL || RES
+const MONGODB_URL = process.env.MONGODB_URL
 
-mongoose
-  .connect(MONGODB_URL)
-  .then(() => {
-    console.log('MongoDB is connected...')
-    app.listen(PORT, () => {
-      console.log(`Server is starting on ${PORT}`)
-    })
-  })
-  .catch((err) => console.log(err))
+// mongoose
+//   .connect(MONGODB_URL)
+//   .then(() => {
+//     console.log('MongoDB is connected...')
+//     app.listen(PORT, () => {
+//       console.log(`Server is starting on ${PORT}`)
+//     })
+//   })
+//   .catch((err) => console.log(err))
 
 // Have Node serve the files for our built React app
 // app.use(express.static(path.resolve(__dirname, '../client/build')));
@@ -51,6 +51,6 @@ app.use("/", (req, res) => {
 
 })
 
-// app.listen(5000, (req, res) => {
-//   console.log('Server is started on Port 5000...')
-// })
+app.listen(5000, (req, res) => {
+  console.log('Server is started on Port 5000...')
+})
