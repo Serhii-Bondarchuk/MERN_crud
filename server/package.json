@@ -4,9 +4,6 @@
   "description": "server part",
   "main": "index.js",
   "type": "module",
-  "engines": {
-    "node": "v20.12.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch index.js",
