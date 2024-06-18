@@ -16,10 +16,17 @@ dotenv.config()
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// const MONGO_COMPAS_URL = "mongodb://localhost:27017/mern-stack"
-const PORT = process.env.PORT || 8000;
-const MONGODB_URL = process.env.MONGODB_URL
+const isProduction = process.env.NODE_ENV === 'production';
 
+const PORT = process.env.PORT || 8000;
+// const MONGO_COMPAS_LOCAL = process.env.MONGO_COMPAS_LOCAL
+const MONGO_COMPAS_MONGODB_URL = process.env.MONGO_COMPAS_MONGODB_URL
+const MONGODB_URL_BASE = process.env.MONGODB_URL_BASE
+
+const MONGODB_URL = isProduction
+  ? MONGODB_URL_BASE
+  : MONGO_COMPAS_MONGODB_URL
+console.log(process.env.NODE_ENV, 22222222)
 mongoose
   .connect(MONGODB_URL)
   .then(() => {
@@ -45,7 +52,9 @@ app.use("/api", userRoute)
 app.use("/", (req, res) => {
 
   return res.send(`SERVER is running...3333333Ok!!! ${process.env.PORT} - port
-    and mongo_url - ${process.env.MONGODB_URL}`)
+    and mongo_url - ${process.env.MONGODB_URL}`,
+    `${process.env.NODE_ENV} - ENV`
+  )
 
 })
 
