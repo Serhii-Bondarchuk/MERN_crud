@@ -45,7 +45,7 @@ mongoose
 
 app.use("/", (req, res) => {
 
-  return res.send(`SERVER is running...22222Ok!!! ${process.env.PORT} - port
+  return res.send(`SERVER is running...3333333Ok!!! ${process.env.PORT} - port
     and mongo_url - ${process.env.MONGO_URL}`)
 
 })
