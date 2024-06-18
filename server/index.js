@@ -26,7 +26,9 @@ const MONGODB_URL_BASE = process.env.MONGODB_URL_BASE
 const MONGODB_URL = isProduction
   ? MONGODB_URL_BASE
   : MONGO_COMPAS_MONGODB_URL
-console.log(process.env.NODE_ENV, 22222222)
+console.log(process.env.DB_NAME, 22222222)
+console.log(typeof process.env.DB_NAME, 22222222)
+
 mongoose
   .connect(MONGODB_URL, {
     dbName: process.env.DB_NAME
