@@ -31,7 +31,7 @@ console.log(typeof process.env.DB_NAME, 22222222)
 const DB_NAME = process.env.DB_NAME
 mongoose
   .connect(MONGODB_URL, {
-    dbName: 'list'
+    dbName: DB_NAME
   })
   .then(() => {
     console.log('MongoDB is connected...')
