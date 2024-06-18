@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 // const MONGO_URL_RES = "mongodb://localhost:27017/mern-stack"
 const PORT = process.env.PORT || 8000;
 // const MONGO_URL = process.env.MONGO_URL || MONGO_URL_RES
-const RES = 'mongodb+srv://amax9111:ZDK3mWUmwz8Z4Vpr@my-mongo-users.s5ry9q1.mongodb.net/?retryWrites=true&w=majority&appName=my-mongo-users'
+// const RES = 'mongodb+srv://amax9111:ZDK3mWUmwz8Z4Vpr@my-mongo-users.s5ry9q1.mongodb.net/?retryWrites=true&w=majority&appName=my-mongo-users'
 const MONGODB_URL = process.env.MONGODB_URL
 
 mongoose
