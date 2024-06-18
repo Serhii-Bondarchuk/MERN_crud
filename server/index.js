@@ -28,7 +28,9 @@ const MONGODB_URL = isProduction
   : MONGO_COMPAS_MONGODB_URL
 console.log(process.env.NODE_ENV, 22222222)
 mongoose
-  .connect(MONGODB_URL)
+  .connect(MONGODB_URL, {
+    dbName: 'list'
+  })
   .then(() => {
     console.log('MongoDB is connected...')
     app.listen(PORT, () => {
