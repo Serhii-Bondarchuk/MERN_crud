@@ -27,7 +27,6 @@ const MONGODB_URL = isProduction
   ? MONGODB_URL_BASE
   : MONGO_COMPAS_MONGODB_URL
 console.log(process.env.DB_NAME, 22222222)
-console.log(typeof process.env.DB_NAME, 22222222)
 const DB_NAME = process.env.DB_NAME
 mongoose
   .connect(MONGODB_URL, {
@@ -56,7 +55,7 @@ app.use("/api", userRoute)
 app.use("/", (req, res) => {
 
   return res.status(200).send(`SERVER is running...3333333Ok!!! ${process.env.PORT} - port
-    and mongo_url - ${process.env.MONGODB_URL} |||  ${process.env.NODE_ENV} - ENV`)
+    and mongo_url - ${process.env.MONGODB_URL} |||  ${process.env.NODE_ENV} - ENV || ${process.env.DB_NAME} - ENV`)
 
 })
 
