@@ -51,10 +51,8 @@ app.use("/api", userRoute)
 
 app.use("/", (req, res) => {
 
-  return res.send(`SERVER is running...3333333Ok!!! ${process.env.PORT} - port
-    and mongo_url - ${process.env.MONGODB_URL}`,
-    `${process.env.NODE_ENV} - ENV`
-  )
+  return res.status(200).send(`SERVER is running...3333333Ok!!! ${process.env.PORT} - port
+    and mongo_url - ${process.env.MONGODB_URL} |||  ${process.env.NODE_ENV} - ENV`)
 
 })
 
