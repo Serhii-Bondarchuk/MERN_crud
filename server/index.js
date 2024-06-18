@@ -26,12 +26,11 @@ mongoose
   .connect(MONGODB_URL)
   .then(() => {
     console.log('MongoDB is connected...')
+    app.listen(PORT, () => {
+      console.log(`Server is starting on ${PORT}`)
+    })
   })
   .catch((err) => console.log(err))
-
-app.listen(PORT, () => {
-  console.log(`Server is starting on ${PORT}`)
-})
 
 // Have Node serve the files for our built React app
 // app.use(express.static(path.resolve(__dirname, '../client/build')));
@@ -47,7 +46,7 @@ app.listen(PORT, () => {
 
 app.use("/", (req, res) => {
 
-  return res.send(`SERVER is running...5555555Ok!!! ${process.env.PORT} - port
+  return res.send(`SERVER is running...3333333Ok!!! ${process.env.PORT} - port
     and mongo_url - ${process.env.MONGODB_URL}`)
 
 })
