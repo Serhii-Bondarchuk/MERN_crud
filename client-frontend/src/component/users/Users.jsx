@@ -12,7 +12,7 @@ function UsersTable() {
   const [uniqueUserEmails, setUniqueUserEmails] = useState([])
 
   // const urlDeploy = 'https://mern-crud-server-psi.vercel.app'
-  const urlDeploy = process.env.URL_DEPLOY
+  const urlDeploy = process.env.REACT_APP_URL_DEPLOY
   console.log(urlDeploy, 'urlDeploy')
   console.log(process.env, 'process.env')
 
