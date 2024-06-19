@@ -1,0 +1,15 @@
+.input-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: column;
+}
+
+input[type='text'] {
+  margin: 0;
+  background-color: cornsilk;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  min-width: 380px;
+}

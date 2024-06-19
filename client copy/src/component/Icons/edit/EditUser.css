@@ -1,0 +1,10 @@
+.edit {
+  cursor: pointer;
+  background-color: cornsilk;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
