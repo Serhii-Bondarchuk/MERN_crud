@@ -3,6 +3,9 @@ import './App.css';
 import { Router } from './router/router';
 
 function App() {
+  console.log(process.env.URL_DEPLOY, 'url')
+  console.log(process.env, 'process')
+
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} />

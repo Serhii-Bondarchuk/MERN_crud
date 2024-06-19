@@ -36,10 +36,12 @@ function UsersTable() {
     }
 
     fetchUsers()
-  }, [])
+  }, [urlDeploy])
 
   const deleteUser = async (id) => {
-    const delUrl = `http://localhost:8000/api/delete/${id}`
+    // const delUrl = `http://localhost:8000/api/delete/${id}`
+    const delUrl = `${urlDeploy}/api/delete/${id}`
+
     try {
       const response = await axios.delete(delUrl)
       toast.success(`User ${response.data.name} deleted successfully!`)
