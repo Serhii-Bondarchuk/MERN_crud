@@ -77,7 +77,7 @@ function UsersTable() {
             </thead>
             <tbody>
               {
-                users.map((user, index) => {
+                users?.map((user, index) => {
                   return (
                     <User {...user} index={++index} toast={toast}
                       deleteUser={deleteUser}
