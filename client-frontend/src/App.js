@@ -1,19 +1,21 @@
 import { Toaster } from 'react-hot-toast';
 import './App.css';
 import { Router } from './router/router';
+import { createContext } from 'react';
+
+export const UrlContext = createContext(process.env.REACT_APP_URL_DEPLOY);
 
 function App() {
-  console.log(process.env.URL_DEPLOY, 'url')
-  console.log(process.env, 'process')
-
   return (
     <>
-      <Toaster position="top-right" reverseOrder={false} />
-      <Router>
-        <div className="App">
-          App is running...!!!
-        </div>
-      </Router>
+      <UrlContext.Provider value={process.env.REACT_APP_URL_DEPLOY}>
+        <Toaster position="top-right" reverseOrder={false} />
+        <Router>
+          <div className="App">
+            App is running...!!!
+          </div>
+        </Router>
+      </UrlContext.Provider>
     </>
   );
 }
