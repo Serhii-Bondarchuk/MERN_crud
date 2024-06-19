@@ -11,7 +11,7 @@ function UsersTable() {
   const [users, setUsers] = useState([])
   const [uniqueUserEmails, setUniqueUserEmails] = useState([])
 
-  const urlDeploy = 'https://66701ad1c9e9f3008f0f7f8f--stately-trifle-9ea6a8.netlify.app'
+  const urlDeploy = 'https://mern-crud-server-psi.vercel.app'
   useEffect(() => {
     const fetchUsers = async () => {
       try {
