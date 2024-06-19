@@ -30,7 +30,7 @@ function UsersTable() {
         }
         ))
       } catch (error) {
-        toast.error(`${error.response.data.msg}`)
+        toast.error(`${error.response?.data.msg}`)
         setUsers([])
       }
     }
