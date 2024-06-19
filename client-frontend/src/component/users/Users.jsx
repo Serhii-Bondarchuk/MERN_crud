@@ -13,7 +13,7 @@ function UsersTable() {
 
   // const urlDeploy = 'https://mern-crud-server-psi.vercel.app'
   const urlDeploy = process.env.URL_DEPLOY
-
+  console.log(urlDeploy, 'urlDeploy')
   useEffect(() => {
     const fetchUsers = async () => {
       try {
