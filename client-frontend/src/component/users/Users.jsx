@@ -76,7 +76,7 @@ function UsersTable() {
               </tr>
             </thead>
             <tbody>
-              {
+              {users.length > 0 &&
                 users?.map((user, index) => {
                   return (
                     <User {...user} index={++index} toast={toast}
