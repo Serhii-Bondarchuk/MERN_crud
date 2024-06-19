@@ -12,6 +12,7 @@ function AddUser() {
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
   const [validationError, setValidationError] = useState(false)
+  const urlDeploy = process.env.URL_DEPLOY
 
   const navigate = useNavigate();
   const { state } = useLocation();
@@ -26,7 +27,8 @@ function AddUser() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/create', newUser)
+      // const response = await axios.post('http://localhost:8000/api/create', newUser)
+      const response = await axios.post(`${urlDeploy}/api/create`, newUser)
       toast.success(`User ${response.data.name} added successfully!`)
       navigate('/')
     } catch (e) {

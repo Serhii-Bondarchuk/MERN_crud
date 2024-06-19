@@ -11,7 +11,9 @@ function UsersTable() {
   const [users, setUsers] = useState([])
   const [uniqueUserEmails, setUniqueUserEmails] = useState([])
 
-  const urlDeploy = 'https://mern-crud-server-psi.vercel.app'
+  // const urlDeploy = 'https://mern-crud-server-psi.vercel.app'
+  const urlDeploy = process.env.URL_DEPLOY
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {

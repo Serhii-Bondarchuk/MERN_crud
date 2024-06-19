@@ -16,6 +16,7 @@ function UpdateUser() {
   const { id } = useParams();
   const { state } = useLocation();
   const navigate = useNavigate();
+  const urlDeploy = process.env.URL_DEPLOY
   const isUniqueEmail = useCallback(() => {
     const userEmails = state.filter(user => user.email === email)
 
@@ -48,7 +49,8 @@ function UpdateUser() {
   useEffect(() => {
     const getUserById = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/user/${id}`)
+        // const response = await axios.get(`${urlDeploy}/api/user/${id}`)
+        const response = await axios.get(`${urlDeploy}/api/user/${id}`)
         const { name: userName, email: userEmail, address: userAddress } = response.data
         setName(userName)
         setEmail(userEmail)
@@ -58,7 +60,7 @@ function UpdateUser() {
       }
     }
     getUserById(id)
-  }, [id])
+  }, [id, urlDeploy])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -70,7 +72,8 @@ function UpdateUser() {
     }
 
     try {
-      const response = await axios.put(`http://localhost:8000/api/update/user/${id}`, newUser)
+      // const response = await axios.put(`http://localhost:8000/api/update/user/${id}`, newUser)
+      const response = await axios.put(`${urlDeploy}/api/update/user/${id}`, newUser)
       toast.success(`User ${response.data.name} added successfully!`)
       navigate('/')
     } catch (e) {
