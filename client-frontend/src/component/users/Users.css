@@ -28,7 +28,36 @@ td {
   background-color: blueviolet;
   padding: 10px !important;
   color: white;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 1px;
 }
 th {
   padding: 10px !important;
+}
+
+@media (max-width: 800px) {
+  td {
+    display: block;
+    max-width: 100%;
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+
+  td:not(:last-child)::before {
+    content: attr(data-cell) ' : ';
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem;
+  }
+
+  td:first-child {
+    padding-top: 3.5rem;
+    background-color: rgb(50, 148, 110);
+  }
+
+  th {
+    display: none;
+  }
 }

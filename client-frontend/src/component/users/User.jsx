@@ -14,10 +14,10 @@ function User({
 }) {
   return (
     <tr>
-      <td style={{ textAlign: 'center' }}>{index}</td>
-      <td>{name}</td>
-      <td>{email}</td>
-      <td>{address}</td>
+      <td data-cell='Number' style={{ textAlign: 'center' }}>{index}</td>
+      <td data-cell='Name' >{name}</td>
+      <td data-cell='Email'>{email}</td>
+      <td data-cell='address'>{address}</td>
       <td>
         <div
           style={{
