@@ -28,6 +28,8 @@ const MONGODB_URL = isProduction
   : MONGO_COMPAS_MONGODB_URL
 console.log(process.env.DB_NAME, 22222222)
 console.log(process.env.NODE_ENV, 33333333)
+console.log(isProduction, 'isProduction')
+
 
 const DB_NAME = process.env.DB_NAME
 mongoose

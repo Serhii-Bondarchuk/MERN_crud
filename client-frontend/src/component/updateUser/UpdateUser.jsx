@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import InputValue from '../input/InputValue'
 import { Button } from 'ui_lib_storybook'
 import axios from 'axios'
@@ -6,17 +6,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom'
 import Error from '../error/Error';
+import { UrlContext } from '../../App'
 
 function UpdateUser() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
   const [validationError, setValidationError] = useState(false)
+  const urlDeploy = useContext(UrlContext)
 
   const { id } = useParams();
   const { state } = useLocation();
   const navigate = useNavigate();
-  const urlDeploy = process.env.URL_DEPLOY
   const isUniqueEmail = useCallback(() => {
     const userEmails = state.filter(user => user.email === email)
 

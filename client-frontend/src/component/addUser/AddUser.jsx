@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import InputValue from '../input/InputValue'
 import { Button } from 'ui_lib_storybook'
 import axios from 'axios'
@@ -6,13 +6,16 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
 import './AddUser.css'
 import Error from '../error/Error';
+import { UrlContext } from '../../App'
+
+
 
 function AddUser() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
   const [validationError, setValidationError] = useState(false)
-  const urlDeploy = process.env.URL_DEPLOY
+  const urlDeploy = useContext(UrlContext)
 
   const navigate = useNavigate();
   const { state } = useLocation();

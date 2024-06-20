@@ -27,6 +27,7 @@ export const getAllUsers = async (req, res) => {
     if (!users || users.length === 0) {
       return res.status(404).json({ msg: 'User not found' });
     }
+    res.append('Cache-Control', 'public, s-maxage=1, must-revalidate')
     return res.status(200).json(users);
 
   } catch (error) {

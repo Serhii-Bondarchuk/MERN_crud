@@ -7,20 +7,26 @@ import User from './User'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import { UrlContext } from '../../App'
+import { useGetUsersUrl } from '../../utils/useGetUsersUrl'
 
 function UsersTable() {
   const [users, setUsers] = useState([])
   const [uniqueUserEmails, setUniqueUserEmails] = useState([])
-  const urlDeploy = useContext(UrlContext)
+  // const urlAPI = useContext(UrlContext)
+  // const urlDev = 'http://localhost:8000'
 
-  console.log(urlDeploy, 55555555555555)
+  // const urlDeploy = process.env.NODE_ENV === 'production' ? urlAPI : urlDev
+  // console.log(process.env.NODE_ENV, 'node_ENV')
+  const urlDeploy = useGetUsersUrl()
+  console.log(useGetUsersUrl(), 55555555555555)
+  console.log(urlDeploy, 'urlDeploy')
 
   // const urlDeploy = 'https://mern-crud-server-psi.vercel.app'
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const urlDeploy = process.env.REACT_APP_URL_DEPLOY
+        // const urlDeploy = process.env.REACT_APP_URL_DEPLOY
         // const response = await axios.get('http://localhost:8000/api/users')
         const response = await axios.get(`${urlDeploy}/api/users`)
 
@@ -40,7 +46,7 @@ function UsersTable() {
     }
 
     fetchUsers()
-  }, [])
+  }, [urlDeploy])
 
   const deleteUser = async (id) => {
     // const delUrl = `http://localhost:8000/api/delete/${id}`
