@@ -50,7 +50,6 @@ function UpdateUser() {
   useEffect(() => {
     const getUserById = async () => {
       try {
-        // const response = await axios.get(`${urlDeploy}/api/user/${id}`)
         const response = await axios.get(`${urlDeploy}/api/user/${id}`)
         const { name: userName, email: userEmail, address: userAddress } = response.data
         setName(userName)
@@ -73,7 +72,6 @@ function UpdateUser() {
     }
 
     try {
-      // const response = await axios.put(`http://localhost:8000/api/update/user/${id}`, newUser)
       const response = await axios.put(`${urlDeploy}/api/update/user/${id}`, newUser)
       toast.success(`User ${response.data.name} added successfully!`)
       navigate('/')

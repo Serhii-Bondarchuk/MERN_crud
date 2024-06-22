@@ -28,7 +28,6 @@ td {
   background-color: blueviolet;
   padding: 10px !important;
   color: white;
-  /* white-space: nowrap; */
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: 1px;
@@ -59,5 +58,31 @@ th {
 
   th {
     display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  table {
+    padding: 10%;
+  }
+  .userTable {
+    display: flex !important;
+    width: 95%;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+  }
+  .table {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 310px) {
+  td {
+    max-width: 215px;
   }
 }

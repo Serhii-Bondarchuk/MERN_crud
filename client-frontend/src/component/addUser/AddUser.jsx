@@ -30,7 +30,6 @@ function AddUser() {
     }
 
     try {
-      // const response = await axios.post('http://localhost:8000/api/create', newUser)
       const response = await axios.post(`${urlDeploy}/api/create`, newUser)
       toast.success(`User ${response.data.name} added successfully!`)
       navigate('/')

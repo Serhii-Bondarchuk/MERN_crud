@@ -12,9 +12,5 @@ route.delete("/delete/:id", deleteUser)
 route.post("/create", create)
 
 route.put("/update/user/:id", update)
-// route.patch("/update/user/:id", update)
-
-
-
 
 export default route
